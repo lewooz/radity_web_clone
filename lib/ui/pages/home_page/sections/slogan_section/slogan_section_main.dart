@@ -7,7 +7,7 @@ class SloganSectionMain extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MainGradientContainer(
-        padding: EdgeInsets.only(top: 152),
+        /*padding: EdgeInsets.only(top: 152),*/
         child: Stack(
           children: renderGradientCircleList(context) +
               [
