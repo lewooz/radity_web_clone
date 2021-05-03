@@ -16,8 +16,8 @@ class SloganContainer extends HookWidget {
   Widget build(BuildContext context) {
     final isSloganVisible = useProvider(HomePageVMProvider).isSloganTooltipVisible;
     double getResponsiveMargin() {
-      if (context.width <= Media.TABLET.breakpoint) return 0;
-      return 38;
+      if (context.width <= Media.TABLET.breakpoint) return 152;
+      return 190;
     }
 
     Widget buildText(String text, int index) {
