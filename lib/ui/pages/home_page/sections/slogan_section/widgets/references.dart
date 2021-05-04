@@ -116,10 +116,6 @@ class References extends HookWidget {
       animate: true,
       child: Container(
         width: double.infinity,
-        margin: EdgeInsets.only(
-            top: useResponsive<double>(
-                largeDesktopValue: context.dynamicHeight(0.22), phone: 100),
-            bottom: 50),
         constraints: BoxConstraints(
           minHeight: 136,
         ),
