@@ -8,5 +8,8 @@ abstract class  LocaleKeys {
   static const digital_magazine = 'digital_magazine';
   static const careers = 'careers';
   static const contact = 'contact';
+  static const main_slogan = 'main_slogan';
+  static const sub_slogan = 'sub_slogan';
+  static const our_services = 'our_services';
 
 }

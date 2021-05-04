@@ -11,7 +11,9 @@ class MainGradientContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       width: context.width,
-      height: context.height,
+      constraints: BoxConstraints(
+        minHeight: context.height
+      ),
       padding: padding ?? EdgeInsets.zero,
       decoration: BoxDecoration(
         gradient: LinearGradient(
