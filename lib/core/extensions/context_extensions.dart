@@ -22,16 +22,14 @@ extension MediaQueryExtension on BuildContext {
   double get highValue => height * 0.1;
 
   Media get media {
-    if(mediaQuery.size.width<=567)
-      return Media.PHONE;
-    if(mediaQuery.size.width<=768)
-      return Media.TABLET;
-    if(mediaQuery.size.width<=992)
-      return Media.DESKTOP;
-    if(mediaQuery.size.width<2559)
-      return Media.LARGE_DESKTOP;
     if(mediaQuery.size.width>=2559)
       return Media.TOO_LARGE_DESKTOP;
+    if(mediaQuery.size.width>=1280)
+      return Media.LARGE_DESKTOP;
+    if(mediaQuery.size.width>=1024)
+      return Media.DESKTOP;
+    if(mediaQuery.size.width>=600)
+      return Media.TABLET;
     return Media.PHONE;
   }
 }

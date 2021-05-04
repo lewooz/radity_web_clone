@@ -42,6 +42,7 @@ dependencies:
   url_launcher: ^6.0.3
   flare_flutter: ^3.0.0
   flutter_portal: ^0.4.0
+  draggable_scrollbar: ^0.1.0
 
 dev_dependencies:
   auto_route_generator: ^2.0.1

@@ -7,7 +7,7 @@ import 'package:radity_website_clone/core/extensions/context_extensions.dart';
 import 'package:radity_website_clone/ui/overlays/drawer_menu_overlay/drawer_menu_contents.dart';
 import 'package:radity_website_clone/ui/sections/header_section/vm/header_vm.dart';
 import 'package:supercharged/supercharged.dart';
-import 'package:radity_website_clone/core/extensions/color_scheme_extension.dart';
+import 'package:radity_website_clone/core/extensions/theme_extensions.dart';
 
 class DrawerMenuMain extends HookWidget {
 

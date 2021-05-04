@@ -10,18 +10,17 @@ class Styles {
       primaryColorLight: Color(0xff091361),
       primaryColorDark: Color(0xff02072F),
       disabledColor: Color(0xff9ba9bb),
+      highlightColor: Color(0xff0073f7),
       accentColor: Colors.white,
       textTheme: GoogleFonts.nunitoSansTextTheme(textTheme).copyWith(
         headline2:
             GoogleFonts.nunitoSans(fontSize: 66, fontWeight: FontWeight.w900),
         headline4:
             GoogleFonts.nunitoSans(fontSize: 32, fontWeight: FontWeight.w900),
-        headline5:
-            GoogleFonts.nunitoSans(fontSize: 23, fontWeight: FontWeight.w700),
         subtitle1:
-            GoogleFonts.nunitoSans(fontSize: 18, fontWeight: FontWeight.w700),
+            GoogleFonts.nunitoSans(fontSize: 18),
         bodyText1:
-            GoogleFonts.nunitoSans(fontSize: 16, fontWeight: FontWeight.w400),
+            GoogleFonts.nunitoSans(fontSize: 16),
       ),
     );
   }

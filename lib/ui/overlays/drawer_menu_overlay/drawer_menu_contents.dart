@@ -1,13 +1,12 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:radity_website_clone/core/constants/application_constants.dart';
-import 'package:radity_website_clone/core/enums/media.dart';
-import 'package:radity_website_clone/core/extensions/context_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:radity_website_clone/core/constants/application_constants.dart';
+import 'package:radity_website_clone/core/extensions/context_extensions.dart';
 import 'package:radity_website_clone/core/extensions/string_extensions.dart';
+import 'package:radity_website_clone/core/hooks/use_%20responsive.dart';
 import 'package:radity_website_clone/ui/sections/header_section/vm/header_vm.dart';
 import 'package:radity_website_clone/ui/shared/lang/locale_keys.g.dart';
 import 'package:radity_website_clone/ui/shared/lang/locale_manager.dart';
@@ -22,26 +21,20 @@ class DrawerMenuContents extends HookWidget {
     final headerVM = useProvider(headerVMProvider);
     final control = useState(CustomAnimationControl.stop);
 
+    final responsiveEdgeInsets = useResponsive<EdgeInsetsGeometry>(
+        largeDesktopValue: EdgeInsets.symmetric(vertical: 50, horizontal: 135),
+        tablet: EdgeInsets.only(top: 33, right: 40, bottom: 30, left: 40),
+        desktop: EdgeInsets.symmetric(vertical: 50, horizontal: 100)
+    );
+
+    final responsiveMinWidth =  useResponsive<double>(largeDesktopValue: 450,tablet: 300);
+
     useEffect(() {
       control.value = headerVM.isDrawerOpen
           ? CustomAnimationControl.play
           : CustomAnimationControl.playReverse;
     }, [headerVM.isDrawerOpen]);
 
-    EdgeInsetsGeometry getResponsivePadding() {
-      if (context.width <= Media.TABLET.breakpoint)
-        return EdgeInsets.only(top: 33, right: 40, bottom: 30, left: 40);
-      if (context.width <= Media.DESKTOP.breakpoint)
-        return EdgeInsets.symmetric(vertical: 50, horizontal: 100);
-      else
-        return EdgeInsets.symmetric(vertical: 50, horizontal: 135);
-    }
-
-    double getResponsiveDrawerMenuWidth(){
-      if (context.width <= Media.TABLET.breakpoint)
-        return 300;
-      return 450;
-    }
 
     return CustomAnimation<Offset>(
       control: control.value,
@@ -52,8 +45,8 @@ class DrawerMenuContents extends HookWidget {
         return Transform.translate(
           offset: value,
           child: Container(
-              padding: getResponsivePadding(),
-              constraints: BoxConstraints(minWidth: getResponsiveDrawerMenuWidth()),
+              padding: responsiveEdgeInsets,
+              constraints: BoxConstraints(minWidth: responsiveMinWidth),
               width: context.dynamicWidth(0.5),
               color: context.theme.accentColor,
               child: Column(

@@ -4,7 +4,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:radity_website_clone/core/enums/media.dart';
 import 'package:radity_website_clone/core/extensions/context_extensions.dart';
-
+import 'package:radity_website_clone/core/extensions/theme_extensions.dart';
 
 class DrawerMenuText extends HookWidget {
 
@@ -26,9 +26,10 @@ class DrawerMenuText extends HookWidget {
       if(isLanguageSelection)
         return context.textTheme.subtitle1!.copyWith(
             color: getColor(),
+            fontWeight: FontWeight.w700
         );
       if(context.width<=Media.TABLET.breakpoint)
-        return context.textTheme.headline5!.copyWith(
+        return context.textTheme.headline23.copyWith(
           color: getColor()
         );
       return context.theme.textTheme.headline4!.copyWith(
