@@ -9,6 +9,7 @@ class SloganSectionMain extends StatelessWidget {
   Widget build(BuildContext context) {
     return MainGradientContainer(
         child: Stack(
+          alignment: Alignment.center,
           children: renderGradientCircleList(context) +
               [
                SloganContainer(),
