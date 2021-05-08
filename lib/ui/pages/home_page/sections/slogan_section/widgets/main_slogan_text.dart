@@ -11,33 +11,36 @@ import 'package:radity_website_clone/ui/pages/home_page/sections/slogan_section/
 import 'package:radity_website_clone/ui/pages/home_page/sections/slogan_section/widgets/slogan_tooltip.dart';
 import 'package:radity_website_clone/ui/pages/home_page/vm/homepage_vm.dart';
 import 'package:radity_website_clone/ui/shared/lang/locale_keys.g.dart';
+import 'package:radity_website_clone/ui/shared/widgets/custom_animation.dart';
+import 'package:radity_website_clone/ui/shared/widgets/new_animations.dart';
 import 'package:supercharged/supercharged.dart';
 import 'package:radity_website_clone/core/extensions/string_extensions.dart';
 
 class MainSloganText extends HookWidget {
-
   @override
   Widget build(BuildContext context) {
-    final isSloganVisible = useProvider(HomePageVMProvider).isSloganTooltipVisible;
+    final isSloganVisible =
+        useProvider(HomePageVMProvider).isSloganTooltipVisible;
     final mainSloganList = LocaleKeys.main_slogan.locale.split(" ");
 
     Widget buildText(String text, int index) {
-      return FadeInLeft(
-          duration: 1.6.seconds,
-          delay: (2.2 + index * 0.15).seconds,
-          animate: true,
-          child: Text(
-            text,
-            style: useResponsive<TextStyle>(
-                largeDesktopValue: context.textTheme.headline2!
-                .copyWith(color: context.theme.accentColor),
-                tablet: context.textTheme.headline42
-            )
-          ));
+      return  CustomFadeAnimation(
+              delay: (2 + index * 0.2).seconds,
+              duration: 1.6.seconds,
+              curve: Curves.linear,
+              from: 30,
+              animate: true,
+              child: Text(
+                text,
+                style: useResponsive<TextStyle>(
+                    largeDesktopValue: context.textTheme.headline2!
+                        .copyWith(color: context.theme.accentColor),
+                    tablet: context.textTheme.headline42),
+              ),
+              animationType: FadeAnimationType.FadeInLeft);
     }
 
-
-    return  PortalEntry(
+    return PortalEntry(
       visible: isSloganVisible,
       portal: SloganTooltip(),
       portalAnchor: Alignment.topRight,
@@ -48,12 +51,14 @@ class MainSloganText extends HookWidget {
           direction: Axis.horizontal,
           alignment: useResponsive<WrapAlignment>(
               largeDesktopValue: WrapAlignment.center,
-              phone: WrapAlignment.start
-          ),
+              phone: WrapAlignment.start),
           spacing: 13,
-          children: mainSloganList.map((e) =>
-              buildText(e, mainSloganList.indexOf(e)),).toList()
-              + [AsteriskAnimation()],
+          children: mainSloganList
+                  .map(
+                    (e) => buildText(e, mainSloganList.indexOf(e)),
+                  )
+                  .toList() +
+              [AsteriskAnimation()],
         ),
       ),
     );

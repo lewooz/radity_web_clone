@@ -8,5 +8,18 @@
   "contact" : "Kontakt",
   "main_slogan" : "Software frisst immer noch die Welt",
   "sub_slogan" : "Wir helfen Ihnen zu überleben und Vorsprung zu halten.",
-  "our_services" : "Unsere Angebote"
+  "our_services" : "Unsere Angebote",
+  "journey" : {
+    "conceptAndUx" : "Sie haben eine Idee oder eine Vision. Wir helfen Ihnen, sie zu verwirklichen. Zusammen erstellen wir ein genaues Bild Ihres Projekts: Funktionelle Wireframes; das gibt Ihnen eine erste Vorstellung davon, wie die Idee realisiert werden kann.",
+    "designAndDevelopment" : "Es ist an der Zeit, aus Ihrem Konzept ein Produkt zu machen. Dies erfordert intensive und fruchtbare Zusammenarbeit. Designer, Entwickler und Teilhaber im Teamwork. Der Koffeinverbrauch geht durch die Decke; aber es lohnt sich.",
+    "launchAndOperate" : "Der letzte Schliff. «One more thing» Momente. Bevor der Vorhang fällt, gibt es immer noch viel zu tun. Infrastruktur bereit. Check. Systeme gesichert. Check. Inhalt bereit und fehlerfrei. Check. Check. Check. Und jetzt geht es... LOS.",
+    "evolveAndSupport" : "Go-Live ist nur der Anfang. Wissenstransfer, Support und Adaptieren. Wir arbeiten hinter den Kulissen. Wir verfolgen Ihre Show, und sehen Ihr Produkt wachsen. Wir sind hier, um Ihnen mit den nächsten Schritten zu helfen."
+  },
+  "playbook_catchphrase": {
+    "first": "Radity hat die Strategie, um aus",
+    "second": "Ihrer digitalen Reise",
+    "third": "einen Erfolg zu machen.",
+    "fourth": "Effektiv. Erfolgreich.",
+    "fifth": "Wir wollen ein Teil Ihrer Erfolgsgeschichte werden."
+  }
 }

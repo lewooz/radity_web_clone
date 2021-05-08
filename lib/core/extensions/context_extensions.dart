@@ -28,7 +28,7 @@ extension MediaQueryExtension on BuildContext {
       return Media.LARGE_DESKTOP;
     if(mediaQuery.size.width>=1024)
       return Media.DESKTOP;
-    if(mediaQuery.size.width>=600)
+    if(mediaQuery.size.width>=768)
       return Media.TABLET;
     return Media.PHONE;
   }

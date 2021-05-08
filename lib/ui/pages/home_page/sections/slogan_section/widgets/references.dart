@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:radity_website_clone/core/constants/string_constants_manager.dart';
 import 'package:radity_website_clone/core/extensions/context_extensions.dart';
 import 'package:radity_website_clone/core/hooks/use_%20responsive.dart';
+import 'package:radity_website_clone/ui/shared/widgets/new_animations.dart';
 import 'package:supercharged/supercharged.dart';
 
 class References extends HookWidget {
@@ -109,11 +110,12 @@ class References extends HookWidget {
       );
     }
 
-    return FadeInUp(
+    return CustomFadeAnimation(
       duration: 1.4.seconds,
-      delay: 5.seconds,
+      delay: 4.5.seconds,
       from: 50,
       animate: true,
+      animationType: FadeAnimationType.FadeInUp,
       child: Container(
         width: double.infinity,
         constraints: BoxConstraints(

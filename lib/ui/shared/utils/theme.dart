@@ -15,6 +15,8 @@ class Styles {
       textTheme: GoogleFonts.nunitoSansTextTheme(textTheme).copyWith(
         headline2:
             GoogleFonts.nunitoSans(fontSize: 66, fontWeight: FontWeight.w900),
+        headline3:
+        GoogleFonts.nunitoSans(fontSize: 36, fontWeight: FontWeight.w900),
         headline4:
             GoogleFonts.nunitoSans(fontSize: 32, fontWeight: FontWeight.w900),
         subtitle1:

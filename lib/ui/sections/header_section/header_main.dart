@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:radity_website_clone/core/extensions/context_extensions.dart';
 import 'package:radity_website_clone/ui/pages/home_page/sections/slogan_section/widgets/asterisk_animation.dart';
 import 'package:radity_website_clone/ui/sections/header_section/vm/header_vm.dart';
 import 'package:supercharged/supercharged.dart';
@@ -9,7 +10,6 @@ class HeaderMain extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final headerVM = useProvider(headerVMProvider);
 
     return Positioned(
@@ -19,7 +19,17 @@ class HeaderMain extends HookWidget {
         child: AnimatedContainer(
           duration: 0.2.seconds,
           height: headerVM.isScrolled ? 90 : 152,
-          color: headerVM.isScrolled ? theme.accentColor : Colors.transparent,
+          decoration: BoxDecoration(
+            color: headerVM.isScrolled ? context.theme.accentColor : Colors.transparent,
+            boxShadow: headerVM.isScrolled ? [
+            BoxShadow(
+                color: context.theme.primaryColorDark.withOpacity(0.1),
+                offset: Offset(0,3),
+                blurRadius: 20
+            )
+            ] : [],
+          ),
+
           child: Center(
             child: ConstrainedBox(
               constraints: BoxConstraints(
@@ -43,7 +53,7 @@ class HeaderMain extends HookWidget {
                     ),
                     IconButton(icon: Icon(
                       Icons.menu,
-                      color: headerVM.isScrolled ? theme.primaryColor : theme.accentColor,
+                      color: headerVM.isScrolled ? context.theme.primaryColor : context.theme.accentColor,
                       size: 30,
                     ), onPressed: () => headerVM.toggleDrawer())
                   ],

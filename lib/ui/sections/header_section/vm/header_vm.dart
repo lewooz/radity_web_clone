@@ -8,8 +8,10 @@ class HeaderVM extends ChangeNotifier{
   bool isDrawerOpen = false;
 
   setScrollStatus(bool status){
-    isScrolled = status;
-    notifyListeners();
+    if(isScrolled!=status){
+      isScrolled = status;
+      notifyListeners();
+    }
   }
   toggleDrawer(){
     isDrawerOpen = !isDrawerOpen;

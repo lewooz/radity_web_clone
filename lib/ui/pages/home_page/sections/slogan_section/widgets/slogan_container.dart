@@ -8,6 +8,7 @@ import 'package:radity_website_clone/ui/pages/home_page/sections/slogan_section/
 import 'package:radity_website_clone/ui/pages/home_page/sections/slogan_section/widgets/references.dart';
 import 'package:radity_website_clone/ui/shared/lang/locale_keys.g.dart';
 import 'package:radity_website_clone/ui/shared/widgets/custom_button.dart';
+import 'package:radity_website_clone/ui/shared/widgets/new_animations.dart';
 import 'package:supercharged/supercharged.dart';
 
 class SloganContainer extends HookWidget {
@@ -35,9 +36,11 @@ class SloganContainer extends HookWidget {
               children: [
                 MainSloganText(),
                 SizedBox(height: 23,),
-                FadeInLeft(
+                CustomFadeAnimation(
+                  animate: true,
+                  animationType: FadeAnimationType.FadeInLeft,
                   duration: 1.6.seconds,
-                  delay: 4.seconds,
+                  delay: 3.5.seconds,
                   from: 50,
                   child: Text(
                     LocaleKeys.sub_slogan.locale,
@@ -50,11 +53,12 @@ class SloganContainer extends HookWidget {
                   ),
                 ),
                 SizedBox(height: useResponsive(largeDesktopValue: 60, phone: 50),),
-                FadeInUp(
+                CustomFadeAnimation(
                   duration: 1.4.seconds,
-                  delay: 4.seconds,
+                  delay: 3.5.seconds,
                   from: 50,
                   animate: true,
+                  animationType: FadeAnimationType.FadeInUp,
                   child: CustomButton(
                     text: LocaleKeys.our_services.locale,
                     onPressed: (){},
@@ -66,7 +70,6 @@ class SloganContainer extends HookWidget {
                     iconData: Icons.arrow_forward_rounded,
                     borderWidth: 2,
                     borderColor: context.theme.highlightColor,
-                    width: useResponsive(largeDesktopValue: 195, phone: 160),
                     height: useResponsive(largeDesktopValue: 60, phone: 45),
                   ),
                 ),

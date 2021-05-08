@@ -11,7 +11,6 @@ import 'package:supercharged/supercharged.dart';
 class LogoOverlay extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final isOverlayVisible = useState(true);
 
     useEffect((){

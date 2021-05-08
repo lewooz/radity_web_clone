@@ -24,7 +24,6 @@ class GradientCircle extends HookWidget {
           .animate(GradientCircleAnimationProps.size, tween: size.tweenTo(size*scalePercentage))
           .animate(GradientCircleAnimationProps.offset, tween: offsetTween);
 
-
     var tween = createTween();
 
     return Positioned(
