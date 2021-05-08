@@ -11,5 +11,16 @@ abstract class  LocaleKeys {
   static const main_slogan = 'main_slogan';
   static const sub_slogan = 'sub_slogan';
   static const our_services = 'our_services';
+  static const journey_conceptAndUx = 'journey.conceptAndUx';
+  static const journey_designAndDevelopment = 'journey.designAndDevelopment';
+  static const journey_launchAndOperate = 'journey.launchAndOperate';
+  static const journey_evolveAndSupport = 'journey.evolveAndSupport';
+  static const journey = 'journey';
+  static const playbook_catchphrase_first = 'playbook_catchphrase.first';
+  static const playbook_catchphrase_second = 'playbook_catchphrase.second';
+  static const playbook_catchphrase_third = 'playbook_catchphrase.third';
+  static const playbook_catchphrase_fourth = 'playbook_catchphrase.fourth';
+  static const playbook_catchphrase_fifth = 'playbook_catchphrase.fifth';
+  static const playbook_catchphrase = 'playbook_catchphrase';
 
 }

@@ -19,6 +19,27 @@ It is our mission to help you stay ahead in the race to digitalization.
   final swissMadeSoftwareLogo = "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/d9/15/d915f33a-d5fb-4bcf-ae65-448c09fea719/partner-swiss-made-software.svg";
   final swissFinanceLogo = "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/04/fb/04fb0d0a-1543-4f5a-b1b7-3b3605f31c4d/parter-swiss-finance-technology-association.svg";
 
+  final extraReferenceImages = [
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/93/18/9318bea8-44ee-45ae-9680-3aa482815763/helvetican.svg",
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/f3/77/f377135e-1615-41c3-830d-c815d978ea4e/swisslife.svg",
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/3d/de/3ddec231-730a-49cf-99be-5bd1e1dd99ef/swissfintech.svg",
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/c6/e3/c6e33a74-4a65-407f-a56d-eab12c2db9c6/axcent.svg",
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/65/27/65273659-59e4-4ef9-9384-e62395d03ad3/sherpany.svg",
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/51/bb/51bb89d8-e650-4735-85a9-e4fc61103aad/sanasearch-logo2x.png",
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/69/0b/690b7298-6d52-4054-880d-9097aa29acad/le-24-24.svg",
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/fe/d8/fed84911-5dce-469c-a5d5-7000a96f52ab/swisskey.svg",
+    "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/e0/04/e004126c-c17b-4e9d-b3d8-d184c58b8b9b/borsala.svg"
+  ];
+
+  final playbookSymmetricContainerImages = [
+    "https://radity.com/static/img/playbook-left.png",
+    "https://radity.com/static/img/playbook-right.png"
+  ];
+
+  final playbookMiddleContainerImages = [
+    "https://radity.com/static/img/playbook-center-left.png",
+    "https://radity.com/static/img/playbook-center-right.png"
+  ];
 }
 
 final stringConstantsProvider = Provider((_)=> StringConstantsManager());

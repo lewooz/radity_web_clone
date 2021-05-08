@@ -5,7 +5,7 @@ import 'package:supercharged/supercharged.dart';
 
 class CustomButton extends HookWidget {
   final Color? borderColor, backgroundColor, textColor, hoverBackgroundColor, hoverTextColor, hoverBorderColor;
-  final double? width, height, borderWidth, fontSize, iconSize, borderRadius;
+  final double? height, borderWidth, fontSize, iconSize, borderRadius;
   final FontWeight? fontWeight;
   final String text;
   final VoidCallback onPressed;
@@ -13,7 +13,6 @@ class CustomButton extends HookWidget {
 
   CustomButton({required this.text,
     required this.onPressed,
-    this.width,
     this.height,
     this.borderRadius = 3,
     this.borderColor = Colors.transparent,
@@ -58,7 +57,6 @@ class CustomButton extends HookWidget {
       onTap: ()=> onPressed(),
       onHover: (hovering)=> isHovering.value = hovering,
       child: AnimatedContainer(
-          width: width,
           height: height,
           duration: animationDuration,
           padding: EdgeInsets.symmetric(horizontal: 18),

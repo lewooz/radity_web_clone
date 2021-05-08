@@ -8,5 +8,18 @@
   "contact" : "Contact",
   "main_slogan" : "Software is still eating the world.",
   "sub_slogan" : "We help you stay alive and ahead.",
-  "our_services" : "Our Services"
+  "our_services" : "Our Services",
+  "journey" : {
+    "conceptAndUx" : "You have an idea, perhaps a vision. We help you refine it, tune it, and we give you the first scan of your new baby: Functional wireframes that makes you want to see your baby grow.",
+    "designAndDevelopment" : "Time to turn that concept into a product. An intensive and fruitful collaboration. Designers, Developers and stakeholders. Teamwork. Big spike in our caffeine intake. But it is worth it.",
+    "launchAndOperate" : "Last polishes. “One more thing” moments. Before taking the curtains off, there is still a lot to do. Infrastructure ready. Check. Systems secured. Check. Content ready and error free check. Check. Check. Check... We are ready to GO.",
+    "evolveAndSupport" : "The Go-Live is just a start. Knowledge transfer, support and adapt. We are behind the curtain. Watching your show. Watching you grow. We are here to help you evolve and help you scale."
+  },
+  "playbook_catchphrase": {
+    "first": "Radity has a playbook to make",
+    "second": "your digital journey",
+    "third": "a success.",
+    "fourth": "Effective. Successful.",
+    "fifth": "We want to be a part of your success story."
+  }
 }
