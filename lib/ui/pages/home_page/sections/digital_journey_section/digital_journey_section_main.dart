@@ -40,7 +40,7 @@ class DigitalJourneySectionMain extends HookWidget {
               maxWidth: 1170
           ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: useResponsive(largeDesktopValue: CrossAxisAlignment.center, tablet: CrossAxisAlignment.start),
             children: [
               SectionTitle(text: "The Digital Journey"),
               Padding(

@@ -45,6 +45,7 @@ dependencies:
   draggable_scrollbar: ^0.1.0
   visibility_detector: ^0.2.0
   infinite_carousel: ^1.0.0
+  flutter_vector_icons: ^1.0.0
 
 dev_dependencies:
   auto_route_generator: ^2.0.1

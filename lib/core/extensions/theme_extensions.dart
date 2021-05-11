@@ -9,6 +9,11 @@ extension CustomColorScheme on ColorScheme{
   Color get tahitiGold => Color(0xffEA8F07);
   Color get silver => Color(0xffC8C8C8);
   Color get stormGray => Color(0xff737687);
+  Color get athensGray => Color(0xffF8F8F9);
+  Color get comet => Color(0xff585C77);
+  Color get spunPearl => Color(0xffadaab7);
+  Color get mischka => Color(0xffE1E1E6);
+  Color get fruitSalad => Color(0xff51A553);
 }
 
 extension CustomTextTheme on TextTheme{

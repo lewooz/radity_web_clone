@@ -21,5 +21,12 @@
     "third": "a success.",
     "fourth": "Effective. Successful.",
     "fifth": "We want to be a part of your success story."
+  },
+  "testimonial_quotes": {
+    "kathrin": "Radity has been a reliable partner in designing and developing the Sanasearch Platform.",
+    "kyle": "Radity GmbH is a seamless communicator with a well-organized workflow. They expertly understand internal stakeholders' needs in order to realize the desired vision.",
+    "john": "My experience with Radity has been very positive. The team brings in a combination of technical skill, design acumen, and business savvy which was essential to effectively working together.",
+    "peter": "We are happy to collaborate with Radity in designing and developing enterprise-grade secure digital products using Microsoft Azure and latest .NET technologies.",
+    "charles": "The most impressive aspect is the speed at which Radity responds to our requests."
   }
 }
