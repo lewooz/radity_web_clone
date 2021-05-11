@@ -5,6 +5,7 @@ import 'package:radity_website_clone/core/extensions/context_extensions.dart';
 import 'package:radity_website_clone/ui/overlays/drawer_menu_overlay/drawer_menu_overlay.dart';
 import 'package:radity_website_clone/ui/overlays/logo_overlay/logo_overlay.dart';
 import 'package:radity_website_clone/ui/pages/home_page/vm/homepage_vm.dart';
+import 'package:radity_website_clone/ui/sections/footer_section/footer_section_main.dart';
 import 'package:radity_website_clone/ui/sections/header_section/header_main.dart';
 
 

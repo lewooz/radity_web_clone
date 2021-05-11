@@ -11,7 +11,7 @@ import 'package:radity_website_clone/ui/pages/second_page/third_page_main.dart';
       page: MainPage,
       children: [
         AutoRoute(path: "home", page: HomePageMain, initial: true),
-        AutoRoute(path: "third", page: ThirdPageMain),
+        AutoRoute(path: "about-us", page: ThirdPageMain),
         RedirectRoute(path: '*', redirectTo: ''),
       ]
     ),

@@ -22,5 +22,11 @@ abstract class  LocaleKeys {
   static const playbook_catchphrase_fourth = 'playbook_catchphrase.fourth';
   static const playbook_catchphrase_fifth = 'playbook_catchphrase.fifth';
   static const playbook_catchphrase = 'playbook_catchphrase';
+  static const testimonial_quotes_kathrin = 'testimonial_quotes.kathrin';
+  static const testimonial_quotes_kyle = 'testimonial_quotes.kyle';
+  static const testimonial_quotes_john = 'testimonial_quotes.john';
+  static const testimonial_quotes_peter = 'testimonial_quotes.peter';
+  static const testimonial_quotes_charles = 'testimonial_quotes.charles';
+  static const testimonial_quotes = 'testimonial_quotes';
 
 }
