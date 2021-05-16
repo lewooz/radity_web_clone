@@ -25,7 +25,7 @@ class FooterLinkText extends HookWidget {
           clipBehavior: Clip.none,
           children: [
             Text(
-              model.title!,
+              model.title,
               style: context.textTheme.bodyText1!.copyWith(color: context.theme.accentColor),
             ),
             Positioned(

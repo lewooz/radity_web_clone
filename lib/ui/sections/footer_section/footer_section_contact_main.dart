@@ -20,6 +20,7 @@ class FooterSectionContactMain extends HookWidget {
               maxWidth: 1170
           ),
           child: Container(
+            color: context.theme.primaryColorDark,
             width: double.infinity,
             child: Column(
               mainAxisSize: MainAxisSize.min,

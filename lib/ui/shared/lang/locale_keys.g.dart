@@ -28,5 +28,10 @@ abstract class  LocaleKeys {
   static const testimonial_quotes_peter = 'testimonial_quotes.peter';
   static const testimonial_quotes_charles = 'testimonial_quotes.charles';
   static const testimonial_quotes = 'testimonial_quotes';
+  static const about_us_title = 'about_us_title';
+  static const about_us_slogan_first = 'about_us_slogan.first';
+  static const about_us_slogan_second = 'about_us_slogan.second';
+  static const about_us_slogan_third = 'about_us_slogan.third';
+  static const about_us_slogan = 'about_us_slogan';
 
 }

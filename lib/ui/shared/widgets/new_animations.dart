@@ -27,7 +27,9 @@ class CustomFadeAnimation extends StatefulWidget {
 class _CustomFadeAnimationState extends State<CustomFadeAnimation> with AnimationMixin {
   late AnimationController _controller;
   late Animation<double> opacity, scale;
-  late Animation<Offset> translate;
+  late Animation<double> translateX;
+  late Animation<double> translateY;
+
 
   Offset getSlideAnimation(){
     switch (widget.animationType){
@@ -48,9 +50,10 @@ class _CustomFadeAnimationState extends State<CustomFadeAnimation> with Animatio
   void initState() {
     _controller = createController();
     _controller.curve(widget.curve ?? Curves.ease);
-    scale = (widget.scaleUp ? 0.0 : 1.0).tweenTo(1).animatedBy(_controller);
-    opacity = 0.0.tweenTo(1.0).animatedBy(_controller);
-    translate = getSlideAnimation().tweenTo(Offset.zero).animatedBy(_controller);
+    scale = (widget.scaleUp ? 0.0 : 1.0).tweenTo(1).animatedBy(_controller).curve(widget.curve ?? Curves.ease);
+    opacity = 0.0.tweenTo(1.0).animatedBy(_controller).curve(widget.curve ?? Curves.ease);
+    translateX = getSlideAnimation().dx.tweenTo(0).animate(CurvedAnimation(parent: _controller, curve: widget.curve ?? Curves.ease));
+    translateY = getSlideAnimation().dy.tweenTo(0).animate(CurvedAnimation(parent: _controller, curve: widget.curve ?? Curves.ease));
     WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
       if(widget.animate ?? false)
         playAnimation();
@@ -67,7 +70,7 @@ class _CustomFadeAnimationState extends State<CustomFadeAnimation> with Animatio
   }
 
   playAnimation() => Timer(widget.delay ?? 0.seconds,(){
-    _controller.play(duration: widget.duration ?? 0.5.seconds);
+    _controller.play(duration: widget.duration ?? 0.5.seconds,);
   });
 
   @override
@@ -78,7 +81,7 @@ class _CustomFadeAnimationState extends State<CustomFadeAnimation> with Animatio
       child: Transform.scale(
         scale: scale.value,
         child: Transform.translate(
-            offset: translate.value,
+            offset: Offset(translateX.value, translateY.value),
             child: widget.child),
       ),
     );

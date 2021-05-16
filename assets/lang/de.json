@@ -28,5 +28,11 @@
     "john": "Meine Erfahrungen mit Radity waren sehr positiv. Das Team bringt eine Kombination aus technischem Können, Design und Geschäftssinn mit, die für eine effektive Zusammenarbeit unerlässlich sind.",
     "peter": "Beim Design und der Entwicklung sicherer digitaler Produkte für Unternehmen mit Microsoft Azure und den neuesten .NET-Technologien freuen wir uns mit Radity zusammenzuarbeiten zu dürfen.",
     "charles": "The most impressive aspect is the speed at which Radity responds to our requests."
+  },
+  "about_us_title": "Über Radity",
+  "about_us_slogan": {
+    "first": "You and us. Together we will succeed. This is our motto. We started Radity out of our passion to design and build digital products that create ",
+    "second": "value",
+    "third": " for users and businesses."
   }
 }

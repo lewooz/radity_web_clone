@@ -19,7 +19,7 @@ class SectionTitle extends HookWidget {
       text,
       style: useResponsive(
           largeDesktopValue: context.textTheme.headline3!.copyWith(color: textColor ?? context.theme.primaryColorDark,),
-          tablet: context.textTheme.headline28.copyWith(color: textColor ?? context.theme.primaryColorDark)
+          tablet: context.textTheme.headline28.copyWith(color: textColor ?? context.theme.primaryColorDark, fontWeight: FontWeight.w900)
       ),
     );
   }
