@@ -14,6 +14,11 @@ extension CustomColorScheme on ColorScheme{
   Color get spunPearl => Color(0xffadaab7);
   Color get mischka => Color(0xffE1E1E6);
   Color get fruitSalad => Color(0xff51A553);
+  Color get tangerine => Color(0xffF08C04);
+  Color get ghost => Color(0xffcccdd5);
+  Color get stTropaz => Color(0xff224B98);
+  Color get gallery => Color(0xffededed);
+  Color get mercury => Color(0xffE5E5E5);
 }
 
 extension CustomTextTheme on TextTheme{
@@ -28,10 +33,13 @@ extension CustomTextTheme on TextTheme{
   );
   TextStyle get headline28 => GoogleFonts.nunitoSans(
       fontSize: 28,
-      fontWeight: FontWeight.w900,
   );
   TextStyle get headline24 => GoogleFonts.nunitoSans(
     fontSize: 24,
+    fontWeight: FontWeight.w900,
+  );
+  TextStyle get headline44 => GoogleFonts.nunitoSans(
+    fontSize: 44,
     fontWeight: FontWeight.w900,
   );
 }

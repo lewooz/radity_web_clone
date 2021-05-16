@@ -1,3 +1,5 @@
+import 'package:auto_route/annotations.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +9,8 @@ import 'package:radity_website_clone/core/constants/application_constants.dart';
 import 'package:radity_website_clone/core/extensions/context_extensions.dart';
 import 'package:radity_website_clone/core/extensions/string_extensions.dart';
 import 'package:radity_website_clone/core/hooks/use_%20responsive.dart';
+import 'package:radity_website_clone/core/routing/router.gr.dart';
+import 'package:radity_website_clone/ui/pages/about_us_page/about_us_page_main.dart';
 import 'package:radity_website_clone/ui/sections/header_section/vm/header_vm.dart';
 import 'package:radity_website_clone/ui/shared/lang/locale_keys.g.dart';
 import 'package:radity_website_clone/ui/shared/lang/locale_manager.dart';
@@ -24,17 +28,16 @@ class DrawerMenuContents extends HookWidget {
     final responsiveEdgeInsets = useResponsive<EdgeInsetsGeometry>(
         largeDesktopValue: EdgeInsets.symmetric(vertical: 50, horizontal: 135),
         tablet: EdgeInsets.only(top: 33, right: 40, bottom: 30, left: 40),
-        desktop: EdgeInsets.symmetric(vertical: 50, horizontal: 100)
-    );
+        desktop: EdgeInsets.symmetric(vertical: 50, horizontal: 100));
 
-    final responsiveMinWidth =  useResponsive<double>(largeDesktopValue: 450,tablet: 300);
+    final responsiveMinWidth =
+        useResponsive<double>(largeDesktopValue: 450, tablet: 300);
 
     useEffect(() {
       control.value = headerVM.isDrawerOpen
           ? CustomAnimationControl.play
           : CustomAnimationControl.playReverse;
     }, [headerVM.isDrawerOpen]);
-
 
     return CustomAnimation<Offset>(
       control: control.value,
@@ -104,6 +107,9 @@ class DrawerMenuContents extends HookWidget {
   }
 
   Container buildMenuOptions(BuildContext context) {
+    final currentRouter = AutoRouter.innerRouterOf(context, MainRoute.name);
+    final currentRouteName = currentRouter?.current.name;
+
     return Container(
       margin: EdgeInsets.symmetric(vertical: 36),
       child: Wrap(
@@ -112,24 +118,31 @@ class DrawerMenuContents extends HookWidget {
         direction: Axis.vertical,
         children: [
           DrawerMenuText(
-            text: LocaleKeys.home.locale,
-          ),
+              text: LocaleKeys.home.locale,
+              isSelected: currentRouteName == "HomeRouter" ? true : false,
+              onTap: () => currentRouter?.push(HomeRouter())),
           DrawerMenuText(
-            text: LocaleKeys.about_us.locale,
-          ),
+              text: LocaleKeys.about_us.locale,
+              isSelected: currentRouteName == "AboutUsRouter" ? true : false,
+              onTap: () => currentRouter?.push(AboutUsRouter())),
           DrawerMenuText(
-            text: LocaleKeys.services.locale,
-          ),
+              text: LocaleKeys.services.locale,
+              isSelected: currentRouteName == "ServicesRouter" ? true : false,
+              onTap: () => currentRouter?.push(ServicesRouter())),
           DrawerMenuText(
-            text: LocaleKeys.case_studies.locale,
-          ),
+              text: LocaleKeys.case_studies.locale,
+              isSelected:
+                  currentRouteName == "CaseStudiesRouter" ? true : false,
+              onTap: () => currentRouter?.push(CaseStudiesRouter())),
           DrawerMenuText(
             text: LocaleKeys.digital_magazine.locale,
           ),
           if (context.locale.toString() == "en")
             DrawerMenuText(
-              text: LocaleKeys.careers.locale,
-            ),
+                text: LocaleKeys.careers.locale,
+                isSelected:
+                    currentRouteName == "CareersRouter" ? true : false,
+                onTap: () => currentRouter?.push(CareersRouter())),
           DrawerMenuText(
             text: LocaleKeys.contact.locale,
           ),
@@ -146,8 +159,7 @@ class DrawerMenuContents extends HookWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           TextButton(
-              onPressed: () => openMailWindow(context)
-              ,
+              onPressed: () => openMailWindow(context),
               child: Text(
                 ApplicationConstants.RADITY_MAIL,
                 style: context.textTheme.subtitle2!
@@ -164,6 +176,6 @@ class DrawerMenuContents extends HookWidget {
   }
 
   void openMailWindow(BuildContext context) {
-      context.read(headerVMProvider).sendMail();
+    context.read(headerVMProvider).sendMail();
   }
 }

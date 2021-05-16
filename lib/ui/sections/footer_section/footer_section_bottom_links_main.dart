@@ -11,7 +11,6 @@ class FooterSectionBottomLinksMain extends HookWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 60, horizontal: 30),
-      color: context.theme.primaryColorDark,
       child: Center(
         child: Container(
           constraints: BoxConstraints(

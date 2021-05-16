@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:radity_website_clone/core/enums/media.dart';
 
 
-
-
 extension ContextExtension on BuildContext {
   MediaQueryData get mediaQuery => MediaQuery.of(this);
   double dynamicWidth (double val) => MediaQuery.of(this).size.width * val;

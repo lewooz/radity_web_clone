@@ -40,6 +40,8 @@ It is our mission to help you stay ahead in the race to digitalization.
     "https://radity.com/static/img/playbook-center-left.png",
     "https://radity.com/static/img/playbook-center-right.png"
   ];
+
+  final aboutUsPageMainImage = "https://raditycmswebsite-live-5f5ab2ec57ec4907b-b52c0bb.divio-media.net/filer_public/1a/96/1a96e7de-b055-44ae-9a13-dee8534eab30/about-us-bg-1992-2.png";
 }
 
 final stringConstantsProvider = Provider((_)=> StringConstantsManager());

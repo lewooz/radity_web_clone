@@ -5,7 +5,7 @@ import 'package:supercharged/supercharged.dart';
 
 class CustomButton extends HookWidget {
   final Color? borderColor, backgroundColor, textColor, hoverBackgroundColor, hoverTextColor, hoverBorderColor;
-  final double? height, borderWidth, fontSize, iconSize, borderRadius;
+  final double? height, width, borderWidth, fontSize, iconSize, borderRadius;
   final FontWeight? fontWeight;
   final String text;
   final VoidCallback onPressed;
@@ -15,6 +15,7 @@ class CustomButton extends HookWidget {
   CustomButton({required this.text,
     required this.onPressed,
     this.height,
+    this.width,
     this.borderRadius = 3,
     this.borderColor = Colors.transparent,
     this.backgroundColor = Colors.white,
@@ -36,13 +37,13 @@ class CustomButton extends HookWidget {
     final Duration animationDuration = 0.2.seconds;
     final TextStyle buttonTextStyle = GoogleFonts.nunitoSans(
         color: textColor,
-        fontSize: fontSize!, fontWeight: fontWeight!
+        fontSize: fontSize!, fontWeight: fontWeight!, letterSpacing: -.6
     );
 
 
     buildAnimatedIcon(){
       return Padding(
-        padding: isReversed! ? EdgeInsets.only(right: 20) : EdgeInsets.only(left: 20),
+        padding: isReversed! ? EdgeInsets.only(right: 15) : EdgeInsets.only(left: 15),
         child: AnimatedSwitcher(
           duration: animationDuration,
           child: isHovering.value ? Icon(iconData,
@@ -77,6 +78,7 @@ class CustomButton extends HookWidget {
       onHover: (hovering)=> isHovering.value = hovering,
       child: AnimatedContainer(
           height: height,
+          width: width,
           duration: animationDuration,
           padding: EdgeInsets.symmetric(horizontal: 18),
           decoration: BoxDecoration(
@@ -85,7 +87,7 @@ class CustomButton extends HookWidget {
             color: isHovering.value ? hoverBackgroundColor : backgroundColor
           ),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: isReversed!
