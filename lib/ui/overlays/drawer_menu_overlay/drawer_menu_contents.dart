@@ -25,6 +25,9 @@ class DrawerMenuContents extends HookWidget {
     final headerVM = useProvider(headerVMProvider);
     final control = useState(CustomAnimationControl.stop);
 
+    final currentRouter = AutoRouter.innerRouterOf(context, MainRoute.name);
+    final currentRouteName = currentRouter?.current.name;
+
     final responsiveEdgeInsets = useResponsive<EdgeInsetsGeometry>(
         largeDesktopValue: EdgeInsets.symmetric(vertical: 50, horizontal: 135),
         tablet: EdgeInsets.only(top: 33, right: 40, bottom: 30, left: 40),
@@ -38,6 +41,53 @@ class DrawerMenuContents extends HookWidget {
           ? CustomAnimationControl.play
           : CustomAnimationControl.playReverse;
     }, [headerVM.isDrawerOpen]);
+
+    void _goLink(PageRouteInfo routeInfo){
+      currentRouter?.push(routeInfo);
+      context.read(headerVMProvider).toggleDrawer();
+    }
+
+    Container buildMenuOptions(BuildContext context) {
+      return Container(
+        margin: EdgeInsets.symmetric(vertical: 36),
+        child: Wrap(
+          crossAxisAlignment: WrapCrossAlignment.end,
+          spacing: 20,
+          direction: Axis.vertical,
+          children: [
+            DrawerMenuText(
+                text: LocaleKeys.home.locale,
+                isSelected: currentRouteName == "HomeRouter" ? true : false,
+                onTap: () => _goLink(HomeRouter())),
+            DrawerMenuText(
+                text: LocaleKeys.about_us.locale,
+                isSelected: currentRouteName == "AboutUsRouter" ? true : false,
+                onTap: () => _goLink(AboutUsRouter())),
+            DrawerMenuText(
+                text: LocaleKeys.services.locale,
+                isSelected: currentRouteName == "ServicesRouter" ? true : false,
+                onTap: () => _goLink(ServicesRouter())),
+            DrawerMenuText(
+                text: LocaleKeys.case_studies.locale,
+                isSelected:
+                currentRouteName == "CaseStudiesRouter" ? true : false,
+                onTap: () => _goLink(CaseStudiesRouter())),
+            DrawerMenuText(
+              text: LocaleKeys.digital_magazine.locale,
+            ),
+            if (context.locale.toString() == "en")
+              DrawerMenuText(
+                  text: LocaleKeys.careers.locale,
+                  isSelected:
+                  currentRouteName == "CareersRouter" ? true : false,
+                  onTap: () => _goLink(CareersRouter())),
+            DrawerMenuText(
+              text: LocaleKeys.contact.locale,
+            ),
+          ],
+        ),
+      );
+    }
 
     return CustomAnimation<Offset>(
       control: control.value,
@@ -106,50 +156,7 @@ class DrawerMenuContents extends HookWidget {
     );
   }
 
-  Container buildMenuOptions(BuildContext context) {
-    final currentRouter = AutoRouter.innerRouterOf(context, MainRoute.name);
-    final currentRouteName = currentRouter?.current.name;
 
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 36),
-      child: Wrap(
-        crossAxisAlignment: WrapCrossAlignment.end,
-        spacing: 20,
-        direction: Axis.vertical,
-        children: [
-          DrawerMenuText(
-              text: LocaleKeys.home.locale,
-              isSelected: currentRouteName == "HomeRouter" ? true : false,
-              onTap: () => currentRouter?.push(HomeRouter())),
-          DrawerMenuText(
-              text: LocaleKeys.about_us.locale,
-              isSelected: currentRouteName == "AboutUsRouter" ? true : false,
-              onTap: () => currentRouter?.push(AboutUsRouter())),
-          DrawerMenuText(
-              text: LocaleKeys.services.locale,
-              isSelected: currentRouteName == "ServicesRouter" ? true : false,
-              onTap: () => currentRouter?.push(ServicesRouter())),
-          DrawerMenuText(
-              text: LocaleKeys.case_studies.locale,
-              isSelected:
-                  currentRouteName == "CaseStudiesRouter" ? true : false,
-              onTap: () => currentRouter?.push(CaseStudiesRouter())),
-          DrawerMenuText(
-            text: LocaleKeys.digital_magazine.locale,
-          ),
-          if (context.locale.toString() == "en")
-            DrawerMenuText(
-                text: LocaleKeys.careers.locale,
-                isSelected:
-                    currentRouteName == "CareersRouter" ? true : false,
-                onTap: () => currentRouter?.push(CareersRouter())),
-          DrawerMenuText(
-            text: LocaleKeys.contact.locale,
-          ),
-        ],
-      ),
-    );
-  }
 
   Expanded buildMailPhone(BuildContext context) {
     return Expanded(

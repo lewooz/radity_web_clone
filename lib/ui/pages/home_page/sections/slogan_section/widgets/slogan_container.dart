@@ -25,58 +25,57 @@ class SloganContainer extends HookWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Container(
-            /*margin: EdgeInsets.only(top: useResponsive(largeDesktopValue: context.dynamicHeight(0.09), phone: context.dynamicHeight(0.04)) ),*/
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: useResponsive<CrossAxisAlignment>(
-                largeDesktopValue: CrossAxisAlignment.center,
-                phone: CrossAxisAlignment.start
-              ),
-              children: [
-                MainSloganText(),
-                SizedBox(height: 23,),
-                CustomFadeAnimation(
-                  animate: true,
-                  animationType: FadeAnimationType.FadeInLeft,
-                  duration: 1.6.seconds,
-                  delay: 3.5.seconds,
-                  from: 50,
-                  child: Text(
-                    LocaleKeys.sub_slogan.locale,
-                    style: useResponsive<TextStyle>(
-                        largeDesktopValue: context.textTheme.headline5!.copyWith(
-                            color: context.theme.accentColor),
-                        tablet: context.textTheme.headline6!.copyWith(
-                            color: context.theme.accentColor)
-                    ),
-                  ),
-                ),
-                SizedBox(height: useResponsive(largeDesktopValue: 60, phone: 50),),
-                CustomFadeAnimation(
-                  duration: 1.4.seconds,
-                  delay: 3.5.seconds,
-                  from: 50,
-                  animate: true,
-                  animationType: FadeAnimationType.FadeInUp,
-                  child: CustomButton(
-                    text: LocaleKeys.our_services.locale,
-                    onPressed: (){},
-                    backgroundColor: context.theme.highlightColor,
-                    textColor: context.theme.accentColor,
-                    hoverTextColor: context.theme.highlightColor,
-                    fontSize: useResponsive(largeDesktopValue: 18, phone: 16),
-                    fontWeight: FontWeight.w700,
-                    iconData: Icons.arrow_forward_rounded,
-                    borderWidth: 2,
-                    borderColor: context.theme.highlightColor,
-                    height: useResponsive(largeDesktopValue: 60, phone: 45),
-                  ),
-                ),
-              ],
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: useResponsive<CrossAxisAlignment>(
+              largeDesktopValue: CrossAxisAlignment.center,
+              phone: CrossAxisAlignment.start
             ),
+            children: [
+              MainSloganText(),
+              SizedBox(height: 23,),
+              CustomFadeAnimation(
+                animate: true,
+                animationType: FadeAnimationType.FadeInLeft,
+                duration: 1.6.seconds,
+                delay: 3.5.seconds,
+                from: 50,
+                child: Text(
+                  LocaleKeys.sub_slogan.locale,
+                  style: useResponsive<TextStyle>(
+                      largeDesktopValue: context.textTheme.headline5!.copyWith(
+                          color: context.theme.accentColor),
+                      tablet: context.textTheme.headline6!.copyWith(
+                          color: context.theme.accentColor)
+                  ),
+                ),
+              ),
+              SizedBox(height: useResponsive(largeDesktopValue: 60, phone: 50),),
+              CustomFadeAnimation(
+                duration: 1.4.seconds,
+                delay: 3.5.seconds,
+                from: 50,
+                animate: true,
+                animationType: FadeAnimationType.FadeInUp,
+                child: CustomButton(
+                  text: LocaleKeys.our_services.locale,
+                  onPressed: (){},
+                  backgroundColor: context.theme.highlightColor,
+                  textColor: context.theme.accentColor,
+                  hoverTextColor: context.theme.highlightColor,
+                  fontSize: useResponsive(largeDesktopValue: 18, phone: 16),
+                  fontWeight: FontWeight.w700,
+                  iconData: Icons.arrow_forward_rounded,
+                  borderWidth: 2,
+                  borderColor: context.theme.highlightColor,
+                  height: useResponsive(largeDesktopValue: 60, phone: 45),
+                ),
+              ),
+            ],
           ),
-          References()
+          Container(
+              margin: EdgeInsets.only(top: useResponsive(largeDesktopValue: 0, phone: 100), bottom: useResponsive(largeDesktopValue: 0 , phone: 50)),
+              child: References())
         ],
       ),
     );
