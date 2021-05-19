@@ -48,7 +48,7 @@ class CaseStudyItem extends HookWidget {
 
     Widget _buildLeftContainer() {
       return Padding(
-        padding: isReverse ? EdgeInsets.only(left: useResponsive(largeDesktopValue: 130, phone: 0)) : EdgeInsets.only(right: 130),
+        padding: isReverse ? EdgeInsets.only(left: useResponsive(largeDesktopValue: 130, phone: 0)) : EdgeInsets.only(right: useResponsive(largeDesktopValue: 130, phone:0)),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,

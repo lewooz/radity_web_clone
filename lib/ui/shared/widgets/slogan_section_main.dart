@@ -39,7 +39,7 @@ class SloganSectionMain extends HookWidget {
             Positioned(
               top: isCareersPage ? 152 : 0,
               right: 0,
-              bottom: 142,
+              bottom: isCareersPage? 142 : 0,
               child: _buildFadeInLeftAnimation(
                   child: Visibility(
                     visible: useResponsive(largeDesktopValue: true, phone: isCareersPage ? false : true),
@@ -58,7 +58,7 @@ class SloganSectionMain extends HookWidget {
                   child: Container(
                     width: double.infinity,
                     constraints: BoxConstraints(maxWidth: 1170),
-                    padding: EdgeInsets.symmetric(horizontal: 30),
+                    padding: EdgeInsets.only(left: 30, right: 30, top: useResponsive(largeDesktopValue: 160, phone: 106)),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
